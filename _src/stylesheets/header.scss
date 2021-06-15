@@ -1,0 +1,297 @@
+/* Desktop Styles */
+
+#lcaHeader a { color: inherit; text-decoration: inherit; }
+
+@media (min-width: 768px) {
+  body { background: #FFFFFF; margin: 0px; }
+
+  #lcaHeader { background: rgba(255,255,255,0.85); color: #D81D1D; width: 100%; height: 110px; padding: 0px 20px; box-sizing: border-box; position: fixed; }
+
+  #lcaHeader * { font-family: muli, sans-serif; font-size: 16px; line-height: 24px; letter-spacing: 0.01em; font-weight: 500; }
+
+  #lcaHeader .lcaElementContent { position: relative; margin: 0 auto; padding: 20px 0px 0px 0px; max-width: 73.75em; max-width: 73.75rem; }
+
+  #lcaHeader .lcaTwoColumnLayout { display: flex; flex-flow: row; }
+
+  #lcaHeader .lcaColumn:last-child { margin-left: auto; }
+
+  #lcaHeader .img-box {}
+
+  #lcaHeader .nav-logo { width: 50px; height: 50px; display: block; margin: 0px auto; }
+
+  #lcaHeader .nav-header { font-size: 20px; font-weight: bold; margin: 0px; }
+
+  #lcaHeader .nav-btn-grid { display: grid; grid-template-columns: repeat(4, auto); grid-column-gap: 10px; margin: 40px 0px 0px 0px; }
+
+  #lcaHeader .nav-btn { font: 16px muli, sans-serif; font-weight: bold; background: transparent; transition: all 0.3s ease; height: 50px; margin: 0px; padding: 15px 21px 0px; box-sizing: border-box; cursor: pointer; }
+
+  #lcaHeader .nav-btn:hover { background: #D81D1D; color: #FFFFFF; }
+  
+  .visible-xs { display: none; }
+}
+
+
+
+/* Mobile Styles */
+
+@media (max-width: 767px) {
+  body { min-width: 320px; background: #FFFFFF; margin: 0px; }
+
+  #lcaHeaderMobile { background: rgba(255,255,255,0.85); color: #D81D1D; width: 100%; height: 80px; padding: 0px 20px; box-sizing: border-box; position: fixed; }
+
+  #lcaHeaderMobile * { font-family: muli, sans-serif; font-size: 16px; line-height: 24px; letter-spacing: 0.01em; font-weight: 500; }
+
+  #lcaHeaderMobile .lcaElementContent { position: relative; margin: 0 auto; padding: 20px 0px 0px 0px; max-width: 73.75em; max-width: 73.75rem; }
+
+  #lcaHeaderMobile .nav-header { font-size: 18px; font-weight: bold; margin: 5px 0 0 50px; }
+  
+  .hidden-xs { display: none; }
+
+
+  //COMMON VARIABLES
+  $primary-theme-color: #D81D1D;
+  $accent-theme-color: #FFFFFF;
+  $light-theme-color: #FFFFFF;
+  $dark-theme-color: #D81D1D;
+
+  //MIXINS
+
+  //transitions mixin
+  @mixin transition-mix($property: all, $duration: 0.2s, $timing: linear, $delay: 0s) {
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-timing-function: $timing;
+    transition-delay: $delay;
+  }
+
+  //position absolute mixin
+  @mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+  }
+
+  .page,
+  .page__content {
+    position: relative;
+  }
+
+  .page {
+    min-height: 100vh;
+
+    perspective: 1500px;
+
+    background-color: rgba($primary-theme-color, .5);
+  }
+
+  .page__content {
+    min-height: 100vh;
+
+    background-color: $light-theme-color;
+  }
+
+  /* navigation styles */
+  $nav-width: 300px;
+  $nav-bg: $primary-theme-color;
+  $nav-padding: 30px;
+
+  $nav-list-offset-vert: 45px;
+
+  $nav-item-offset-vert: 20px;
+
+  $nav-icon-offset-horz: 10px;
+
+  .nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+
+    width: $nav-width;
+    padding: $nav-padding;
+    box-sizing: border-box;
+
+    background-color: $nav-bg;
+    box-shadow: 4px 0 5px 0 rgba(0,0,0,0.14), 
+                1px 0 10px 0 rgba(0,0,0,0.12), 
+                2px 0 4px -1px rgba(0,0,0,0.3);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 500;
+  }
+
+  /* nav list styles */
+  .nav__list {
+    position: relative;
+
+    padding: 0;
+    margin: $nav-list-offset-vert 0 0 0;
+
+    list-style-type: none;
+  }
+
+  /* nav item styles */
+  .nav__item {
+
+    &:not(:last-child) {
+      margin-bottom: $nav-item-offset-vert;
+    }
+  }
+
+  /* nav link styles */
+  .nav__link {
+    @include transition-mix;
+
+    display: inline-flex;
+    align-items: center;
+
+    color: $light-theme-color;
+    text-decoration: none;
+    font: bold 16px Muli, sans-serif;
+
+    &:hover {
+      color: $accent-theme-color;
+    }
+  }
+
+  /* nav link icon styles */
+  .nav__link-icon {
+    position: relative;
+    top: - 3px; /* !!!use only with material design icons */
+
+    margin-right: $nav-icon-offset-horz;
+
+    color: currentColor;
+  }
+
+  /* close icon styles */
+  .nav__close {
+    @include position-absolute($top: $nav-padding, $right: $nav-padding);
+
+    width: 40px;
+    height: 25px;
+
+    cursor: pointer;
+
+    /* close icon elements */
+    &:before,
+    &:after {
+      @include transition-mix;
+
+      display: block;
+      width: 4px;
+      height: 28px;
+      border-radius: 10px;
+
+      content: '';
+
+      transform-origin: center center;
+      background-color: $light-theme-color;
+    }
+
+    &:before {
+      @include position-absolute($top: 0, $left: 18px);
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      @include position-absolute($top: 0, $right: 18px);
+      transform: rotate(45deg);
+    }
+
+    /* hover effect */
+    &:hover {
+
+      &:before,
+      &:after {
+        background-color: $accent-theme-color;
+      }
+    }
+  }
+
+  /* nav open btn styles */
+  $nav-open-btn-vert-offset: 25px;
+  $nav-open-btn-horz-offset: 20px;
+
+  .nav-open-btn {
+    @include position-absolute($top: $nav-open-btn-vert-offset, $left: $nav-open-btn-horz-offset);
+   @include transition-mix();
+
+    width: 30px;
+    height: 25px;
+
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+
+    //used to hide open btn when the nav is opened
+    &.js-hidden {
+      @include transition-mix($duration: 0s);
+
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .nav-open-btn__bar {
+    width: 100%;
+    height: 5px;
+
+    background-color: $dark-theme-color;
+    border-radius: 20px;
+
+    &:nth-child(1) {
+      @include position-absolute($top: 0, $left: 0);
+    }
+
+    &:nth-child(2) {
+      @include position-absolute($top: 10px, $left: 0);
+    }
+
+    &:nth-child(3) {
+      @include position-absolute($top: 20px, $left: 0);
+    }
+  }
+
+  /* Demo #1: styles */
+  $nav-list-offset-vert: 30px;
+
+  .nav--offcanvas-1 {
+    @include transition-mix();
+
+    left: (- $nav-width);
+
+    /* opened styles */
+    &.js-opened {
+      @include transition-mix($property: left);
+      left: 0;
+
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .page__content--offcanvas-1 {
+    @include transition-mix();
+
+    left: 0;
+
+    /* opened styles */
+    &.js-opened {
+      @include transition-mix($duration: .3s);
+      left: $nav-width;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Lambs Christian Academy</title>
+    @@include('./includes.html')
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index.css"/>
+</head>
+<body>
+  <!-- Desktop -->
+  <div class="desktop-wrapper hidden-xs">
+    @@include('./content/header.html')
+    @@include('./content/index-content.html')
+    @@include('./content/footer.html')
+  </div>
+
+  <!-- Mobile -->
+  <div class="page visible-xs">
+    @@include('./content/header-accordion.html')
+    <div class="page__content">
+      <div class="nav-open-btn">
+        <div class="nav-open-btn__bar"></div>
+        <div class="nav-open-btn__bar"></div>
+        <div class="nav-open-btn__bar"></div>
+      </div>
+      <div class="content">
+        @@include('./content/header-mobile.html')
+        @@include('./content/index-content.html')
+        @@include('./content/footer.html')
+        <script>@@include('./scripts/header-accordion.js')</script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

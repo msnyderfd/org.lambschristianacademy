@@ -1,0 +1,89 @@
+#lcaFooter { background: #D81D1D; color: #FFFFFF; font-family: muli, sans-serif; font-size: 16px; line-height: 24px; letter-spacing: 0.01em; font-weight: 500; }
+
+#lcaFooter a { color: inherit; text-decoration: none; }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer-logo { display: none; }
+}
+
+@media (min-width: 768px) {
+  #lcaFooter .footer-top { margin: 0px; padding: 0px 20px; }
+
+  #lcaFooter .footer-bottom { height: auto; margin: 0; padding: 0 20px 20px; }
+
+  #lcaFooter .lcaElementContent { position: relative; margin: 0 auto; max-width: 73.75em; max-width: 73.75rem; }
+
+  #lcaFooter .lcaMultiColumnLayout { display: flex; flex-flow: row; padding-top: 30px; }
+
+  #lcaFooter .lcaColumn { display: flex; flex-direction: column; }
+
+  #lcaFooter .footer-logo > img { width: 115px; height: 115px; margin: 0px 20px 0px 0px; }
+
+  #lcaFooter .school-details > div > a { font-size: 18px; font-weight: 800; color: #FFFFFF; text-decoration: none; margin: 0px; }
+
+  #lcaFooter .school-details > div { font-size: 15px; color: #FFFFFF; margin: 0px; }
+
+  #lcaFooter ul { list-style: none; padding: 0; }
+
+  #lcaFooter li { float: left; position: relative; }
+
+  #lcaFooter li > a { display: inline-block; padding: 6px 16px 9px 0px; font-size: 15px; line-height: 22px; text-align: center; float: left; }
+
+  #lcaFooter li > a:hover { text-decoration: underline; }
+
+  #lcaFooter li:not(:first-child) > a { padding: 6px 16px 9px 17px; }
+
+  #lcaFooter li:not(:last-child)::after { content: ''; display: block; position: absolute; background-color: rgba(255, 255, 255, 0.4); width: 1px; height: 11px; top: 48%; left: auto; right: 0; -ms-transform: translateY(-50%); transform: translateY(-50%); }
+
+  #lcaFooter .donation-link { display: inline-block; min-width: 180px; margin: 0px 3px 10px 2px; padding: 14px 20px 13px; border: 1px solid #FF7070; font-size: 16px; line-height: 20px; vertical-align: middle; letter-spacing: 0; text-align: center; background-color: transparent; transition: all 0.3s ease; float: right; }
+
+  #lcaFooter .donation-link:hover { background: #FF7070; }
+
+  #lcaFooter .copyright { margin-top: 20px; }
+
+  #lcaFooter .social-links { float: right; }
+
+  #lcaFooter .visible-xs { display: none !important; }
+}
+
+@media (max-width: 767px) {
+  #lcaFooter { width: 100%; min-width: 320px; padding: 20px 10px; box-sizing: border-box; }
+
+  #lcaFooter .footer-logo > img { width: 100px; height: 100px; margin: 0px 10px 0px 0px; display: block; }
+
+  #lcaFooter .column-left > header { display: flex; flex-flow: row; width: 360px; margin: 0px auto 20px auto; }
+
+  #lcaFooter .column-right { display: flex; flex-direction: column; }
+
+  #lcaFooter .school-details > div > a { font-size: 13px; font-weight: bold; }
+
+  #lcaFooter .school-details > div { font-size: 13px; }
+  
+  #lcaFooter .school-details { margin-top: 13px; }
+
+  #lcaFooter ul.lcaNav { list-style: none; margin: 10px auto; padding: 0px; width: calc(100% - 20px); max-width: 360px; }
+
+  #lcaFooter ul.lcaNav > li { text-align: center; margin: 5px 0px; padding: 0px 0px 5px 0px; }
+
+  #lcaFooter ul.lcaNav > li:not(:last-child) { border-bottom: 1px solid #FFFFFF; }
+
+  #lcaFooter .donation-link { display: block; width: calc(100% - 20px); min-width: 180px; max-width: 360px; margin: 10px auto; padding: 14px 20px 13px; box-sizing: border-box; border: 1px solid #FF7070; font-size: 16px; line-height: 20px; vertical-align: middle; letter-spacing: 0; text-align: center; background-color: transparent; transition: all 0.3s ease; }
+
+  #lcaFooter .donation-link:hover { background: #FF7070; }
+
+  #lcaFooter .copyright { text-align: center; }
+
+  #lcaFooter .social-links { list-style: none; padding: 0; border: 1px solid blue; }
+
+  #lcaFooter .social-links > li { float: left; }
+
+  #lcaFooter .social-links > li > a { display: inline-block; padding: 6px 16px 9px 0px; font-size: 15px; line-height: 22px; text-align: center; }
+
+  .hidden-xs { display: none !important; }
+}
+
+@media (max-width: 460px) {
+  #lcaFooter .column-left > header { width: 275px; }
+  
+  #lcaFooter .school-details { margin-top: 0px; }
+}

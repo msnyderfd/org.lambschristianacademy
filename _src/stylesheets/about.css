@@ -1,0 +1,19 @@
+.about-container {}
+
+.about-banner > img { max-width: 100%; }
+
+.about-text { font-family: Muli, sans-serif; max-width: 73.75em; max-width: 73.75rem; margin: 40px auto; padding: 0px 20px; box-sizing: border-box; }
+
+.about-text > h1 { font-size: 26px; }
+
+.about-text > p { text-align: justify; }
+
+.divider { width: 100%; height: 1px; background: #D8D8D8; margin: 10px 0px 20px; }
+
+@media (min-width: 768px) {
+  .hide-desktop { display: none; }
+}
+
+@media (max-width: 767px) {
+  .hide-mobile { display: none; }
+}
