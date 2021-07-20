@@ -5,7 +5,7 @@
 @media (min-width: 768px) {
   body { background: #FFFFFF; margin: 0px; }
 
-  #lcaHeader { background: rgba(255,255,255,0.85); color: #D81D1D; width: 100%; height: 110px; padding: 0px 20px; box-sizing: border-box; position: fixed; }
+  #lcaHeader { background: rgba(255,255,255); color: #D81D1D; width: 100%; height: 110px; padding: 0px 20px; box-sizing: border-box; position: sticky; top: 0; z-index: 10; }
 
   #lcaHeader * { font-family: muli, sans-serif; font-size: 16px; line-height: 24px; letter-spacing: 0.01em; font-weight: 500; }
 
@@ -37,7 +37,7 @@
 @media (max-width: 767px) {
   body { min-width: 320px; background: #FFFFFF; margin: 0px; }
 
-  #lcaHeaderMobile { background: rgba(255,255,255,0.85); color: #D81D1D; width: 100%; height: 80px; padding: 0px 20px; box-sizing: border-box; position: fixed; }
+  #lcaHeaderMobile { background: rgba(255,255,255); color: #D81D1D; width: 100%; height: 80px; padding: 0px 20px; box-sizing: border-box; position: sticky; top: 0; z-index: 10; }
 
   #lcaHeaderMobile * { font-family: muli, sans-serif; font-size: 16px; line-height: 24px; letter-spacing: 0.01em; font-weight: 500; }
 
@@ -234,7 +234,7 @@
 
     overflow: hidden;
     cursor: pointer;
-    z-index: 1;
+    z-index: 11;
 
     //used to hide open btn when the nav is opened
     &.js-hidden {
