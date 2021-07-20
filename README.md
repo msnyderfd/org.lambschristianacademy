@@ -9,6 +9,7 @@ File change instructions:
   - Make ALL changes in the src folder
   - Any changes to content should be made in the corresponding src/content/ file and NOT the src/ file
   - Once all changes are made, double click or run compile.bat and wait for it to complete
+  - Test your changes by opening dist/index.html in a browser (note that the youtube video will not work because you are not on a server)
   - Log in to the Amazon S3 portal and open up the bucket called lambschristianacademy.org
   - Click and drag all of the contents INSIDE the dist folder (not the actual dist folder itself) and drag it to the upload area on S3
   - Click upload and it should overwrite all previous content
